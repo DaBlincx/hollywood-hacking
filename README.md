@@ -1,6 +1,6 @@
 # hollywood-hacking
 
- another, more movie friendly version of "nethax"
+ another, more movie friendly version of "nethax" (https://www.github.com/DaBlincx/nethax)
 
  # Information
 
