@@ -19,5 +19,8 @@ def mainMenu():
     clscr()
     banner = pyfiglet.figlet_format(" Cryptix ",font="banner3-D")
     con.print((":"*75 + "\n")*2 + banner + ":"*75,style="bold green")
+    print()
+    
+    
 
 mainMenu()
