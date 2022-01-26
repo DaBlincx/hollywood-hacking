@@ -9,6 +9,7 @@ from rich.progress import *
 from rich.console import *
 import pyfiglet
 from read_readme import *
+from terminal_width import *
 
 con = Console()
 
@@ -33,9 +34,23 @@ def mainMenu():
     banner = pyfiglet.figlet_format(" Cryptix ",font="banner3-D")
     con.print((":"*75 + "\n")*2 + banner + ":"*75,style="bold green")
     print()
-    con.print("\n   1. Matrix")
+    con.print("\n   1. Matrix\n")
+    matrix()
     
-    
+def matrix():
+    terminal_width = getWidth()
+    symbols = ['1','0',' ',' ',' ',' ',' ']
+    for i in range(1,int(input("how many lines?: "))):
+        line = []
+        pr_line = ""
+        for i in range(1,terminal_width):
+            r_symbol = random.choice(symbols)
+            line.append(r_symbol)
+        for symb in line:
+            pr_line = pr_line + symb
+        con.print(pr_line,style="bold")
+        time.sleep(0.01)
+
 
 if read_readmeMD:
     mainMenu()

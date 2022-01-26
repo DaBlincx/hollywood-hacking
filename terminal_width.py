@@ -1,6 +1,6 @@
 import shutil
 
-def get_width():
+def getWidth():
     size1 = shutil.get_terminal_size((80, 20))
     size2 = str(size1).replace("os.terminal_size(columns=","")
     size3 = size2[:-9]
