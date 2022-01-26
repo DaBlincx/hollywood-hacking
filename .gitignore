@@ -1,1 +1,4 @@
 .DS_Store
+maybe.txt
+printfonts.txt
+__pycache__/fontlist.cpython-39.pyc
