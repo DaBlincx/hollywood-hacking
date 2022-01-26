@@ -21,8 +21,8 @@ def mainMenu():
     print("\n\n")
     print(f"{nr}/{len(fontlist)}\n{fontch}")
     banner = pyfiglet.figlet_format("Cryptix",font=fontch)
-    f_banner = con.print(banner,style="bold green")
-    f.write(f"\n\n{nr}/{len(fontlist)}\n{fontch}\n{f_banner}")
+    con.print(banner,style="bold green")
+    f.write(f"\n\n{nr}/{len(fontlist)}\n{fontch}\n{banner}")
 
 nr = 0
 f = open("printfonts.txt","w",encoding="UTF-8")
