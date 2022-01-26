@@ -8,7 +8,6 @@ from rich.panel import *
 from rich.progress import *
 from rich.console import *
 import pyfiglet
-from fontlist import *
 
 con = Console()
 
