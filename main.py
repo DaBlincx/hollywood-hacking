@@ -17,16 +17,8 @@ def clscr():
         print()
 
 def mainMenu():
-    ##clscr()
-    print("\n\n")
-    print(f"{nr}/{len(fontlist)}\n{fontch}")
-    banner = pyfiglet.figlet_format("Cryptix",font=fontch)
-    con.print(banner,style="bold green")
-    f.write(f"\n\n{nr}/{len(fontlist)}\n{fontch}\n{banner}")
+    clscr()
+    banner = pyfiglet.figlet_format(" Cryptix ",font="banner3-D")
+    con.print((":"*75 + "\n")*2 + banner + ":"*75,style="bold green")
 
-nr = 0
-f = open("printfonts.txt","w",encoding="UTF-8")
-for fontch in fontlist:
-    nr += 1
-    mainMenu()
-f.close
+mainMenu()
