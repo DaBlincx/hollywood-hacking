@@ -9,3 +9,9 @@
  - looks more like the hollywood hacking scenes do
 
 
+
+
+# Licensing
+
+This tool can be freely used in any movie production or anything else without payment.
+
