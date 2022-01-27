@@ -26,8 +26,7 @@ if read_readmeMD == False:
         f.close
 
 def clscr():
-    for i in range(200):
-        print()
+    print("\n"*200)
 
 def mainMenu():
     clscr()
@@ -38,26 +37,31 @@ def mainMenu():
     matrix()
     
 def matrix():
-    terminal_size = getTermSize()
+    for i in range(1,int(input("how much? "))):
+        clscr()
+        terminal_size = getTermSize()
     
-    symbols = ['1','0',' ',' ',' ',' ',' ']
-    rd_line = []
-    for i in range(1,(round(int(terminal_size[1])/2))):
-        line = []
-        pr_line = ""
-        for i in range(1,(round(int(terminal_size[0])/2))):
-            r_symbol = random.choice(symbols)
-            line.append(r_symbol)
-        for symb in line:
-            pr_line = pr_line + symb
-        rd_line.append(pr_line)
-    
-    pr_wdow = ""
-    for ig in rd_line:
-        pr_wdow = pr_wdow + "\n" + ig
-    
-    print(pr_wdow)
+        symbols = ['1','0',' ',' ',' ',' ',' ']
+        rd_line = []
+        for i in range(1,(round(int(terminal_size[1])/2))):
+            line = []
+            pr_line = ""
+            for i in range(1,(round(int(terminal_size[0])/2))):
+                r_symbol = random.choice(symbols)
+                line.append(r_symbol)
+            for symb in line:
+                pr_line = pr_line + symb
+            rd_line.append(pr_line)
 
+        pr_wdow = ""
+        for ig in rd_line:
+            pr_wdow = pr_wdow + "\n" + ig
+    
+        print(pr_wdow)
+
+        time.sleep(0.2)
+
+        
 
 if read_readmeMD:
     mainMenu()
