@@ -10,7 +10,7 @@ from rich.console import *
 import pyfiglet
 from modules.read_readme import *
 from modules.terminal_size import *
-
+from modules.wifis import *
 
 
 con = Console()
