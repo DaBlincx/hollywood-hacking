@@ -8,8 +8,10 @@ from rich.panel import *
 from rich.progress import *
 from rich.console import *
 import pyfiglet
-from read_readme import *
-from terminal_size import *
+from modules.read_readme import *
+from modules.terminal_size import *
+
+
 
 con = Console()
 
@@ -37,31 +39,59 @@ def mainMenu():
     matrix()
     
 def matrix():
-    for i in range(1,int(input("how much? "))):
-        clscr()
-        terminal_size = getTermSize()
-    
-        symbols = ['1','0',' ',' ',' ',' ',' ']
-        rd_line = []
-        for i in range(1,(round(int(terminal_size[1])/2))):
-            line = []
-            pr_line = ""
-            for i in range(1,(round(int(terminal_size[0])/2))):
-                r_symbol = random.choice(symbols)
-                line.append(r_symbol)
-            for symb in line:
-                pr_line = pr_line + symb
-            rd_line.append(pr_line)
+    leng = input("how much? ")
+    if type(leng) == int:
+        for i in range(1,int(leng)):
+            clscr()
+            terminal_size = getTermSize()
 
-        pr_wdow = ""
-        for ig in rd_line:
-            pr_wdow = pr_wdow + "\n" + ig
-    
-        print(pr_wdow)
+            symbols = ['1','0',' ',' ',' ',' ',' ']
+            rd_line = []
+            for i in range(1,(round(int(terminal_size[1])/2))):
+                line = []
+                pr_line = ""
+                for i in range(1,(round(int(terminal_size[0])/2))):
+                    r_symbol = random.choice(symbols)
+                    line.append(r_symbol)
+                for symb in line:
+                    pr_line = pr_line + symb
+                rd_line.append(pr_line)
 
-        time.sleep(0.2)
+            pr_wdow = "" # every single line of rd_line
+            for ig in rd_line:
+                pr_wdow = pr_wdow + "\n" + ig
 
-        
+            print(pr_wdow)
+
+            time.sleep(0.2)
+
+    else:
+        while True:
+            clscr()
+            terminal_size = getTermSize()
+
+            symbols = ['1','0',' ',' ',' ',' ',' ']
+            rd_line = []
+            for i in range(1,(round(int(terminal_size[1])/2))):
+                line = []
+                pr_line = ""
+                for i in range(1,(round(int(terminal_size[0])/2))):
+                    r_symbol = random.choice(symbols)
+                    line.append(r_symbol)
+                for symb in line:
+                    pr_line = pr_line + symb
+                rd_line.append(pr_line)
+
+
+            pr_wdow = ""
+            for ig in rd_line:
+                pr_wdow = pr_wdow + "\n" + ig
+
+            print(pr_wdow)
+
+            time.sleep(0.2)
+
+
 
 if read_readmeMD:
     mainMenu()
