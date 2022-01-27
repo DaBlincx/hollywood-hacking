@@ -9,7 +9,7 @@ from rich.progress import *
 from rich.console import *
 import pyfiglet
 from read_readme import *
-from terminal_width import *
+from terminal_size import *
 
 con = Console()
 
@@ -38,18 +38,25 @@ def mainMenu():
     matrix()
     
 def matrix():
-    terminal_width = getWidth()
+    terminal_size = getTermSize()
+    
     symbols = ['1','0',' ',' ',' ',' ',' ']
-    for i in range(1,int(input("how many lines?: "))):
+    rd_line = []
+    for i in range(1,(round(int(terminal_size[1])/2))):
         line = []
         pr_line = ""
-        for i in range(1,terminal_width):
+        for i in range(1,(round(int(terminal_size[0])/2))):
             r_symbol = random.choice(symbols)
             line.append(r_symbol)
         for symb in line:
             pr_line = pr_line + symb
-        con.print(pr_line,style="bold")
-        time.sleep(0.01)
+        rd_line.append(pr_line)
+    
+    pr_wdow = ""
+    for ig in rd_line:
+        pr_wdow = pr_wdow + "\n" + ig
+    
+    print(pr_wdow)
 
 
 if read_readmeMD:
