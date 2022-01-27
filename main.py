@@ -35,66 +35,38 @@ def mainMenu():
     banner = pyfiglet.figlet_format(" Cryptix ",font="banner3-D")
     con.print((":"*75 + "\n")*2 + banner + ":"*75,style="bold green")
     print()
-    con.print("\n   1. Matrix\n")
-    matrix()
+    con.print("\n   1. Matrix\n   2. WIFI\n   3. full hacking screen")
+    #menuAW = IntPrompt.ask("What do you pick? ",choices=['1','2','3',])
+    #if menuAW == 1:
+    #    matrix()
+    #if menuAW == 2:
+    #    wifihack()
+    #if menuAW == 3:
+    #    hackScreen()
     
-def matrix():
-    leng = input("how much? ")
-    if type(leng) == int:
-        for i in range(1,int(leng)):
-            clscr()
-            terminal_size = getTermSize()
+def halfMatrix():
+    terminal_size = getTermSize()
 
-            symbols = ['1','0',' ',' ',' ',' ',' ']
-            rd_line = []
-            for i in range(1,(round(int(terminal_size[1])/2))):
-                line = []
-                pr_line = ""
-                for i in range(1,(round(int(terminal_size[0])/2))):
-                    r_symbol = random.choice(symbols)
-                    line.append(r_symbol)
-                for symb in line:
-                    pr_line = pr_line + symb
-                rd_line.append(pr_line)
+    symbols = ['1','0',' ',' ',' ',' ',' ']
+    rd_line = []
+    for i in range(1,(round(int(terminal_size[1])/2))):
+        line = []
+        pr_line = ""
+        for i in range(1,(round(int(terminal_size[0])/2))):
+            r_symbol = random.choice(symbols)
+            line.append(r_symbol)
+        for symb in line:
+            pr_line = pr_line + symb
+        rd_line.append(pr_line)
 
-            pr_wdow = "" # every single line of rd_line
-            for ig in rd_line:
-                pr_wdow = pr_wdow + "\n" + ig
-
-            print(pr_wdow)
-
-            time.sleep(0.2)
-
-    else:
-        while True:
-            clscr()
-            terminal_size = getTermSize()
-
-            symbols = ['1','0',' ',' ',' ',' ',' ']
-            rd_line = []
-            for i in range(1,(round(int(terminal_size[1])/2))):
-                line = []
-                pr_line = ""
-                for i in range(1,(round(int(terminal_size[0])/2))):
-                    r_symbol = random.choice(symbols)
-                    line.append(r_symbol)
-                for symb in line:
-                    pr_line = pr_line + symb
-                rd_line.append(pr_line)
-
-
-            pr_wdow = ""
-            for ig in rd_line:
-                pr_wdow = pr_wdow + "\n" + ig
-
-            print(pr_wdow)
-
-            time.sleep(0.2)
+    return rd_line
 
 
 
 if read_readmeMD:
     mainMenu()
+    for line in halfMatrix():
+        print(line)
 else:
     print("\nPlease read README.md\n")
     exit()

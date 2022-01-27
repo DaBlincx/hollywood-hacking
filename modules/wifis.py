@@ -7,7 +7,7 @@ networks = [
     [
         'WLAN-5176284', 
         'CD:88:19:1D:AC:FD', 
-        'garderROBE_for1902'
+        '4096204810249741'
         ], 
     [
         'wifi_for_me', 
@@ -32,7 +32,7 @@ networks = [
     [
         'Router 13F984E26870', 
         '13:F9:84:E2:68:70', 
-        '4096204810249741'
+        'garderROBE_for1902'
         ], 
     [
         'funny_name', 
@@ -40,6 +40,3 @@ networks = [
         '8885907321714275420'
         ]
 ]
-
-
-print(networks)
