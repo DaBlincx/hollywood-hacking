@@ -8,9 +8,9 @@ from rich.panel import *
 from rich.progress import *
 from rich.console import *
 import pyfiglet
-from modules.read_readme import *
-from modules.terminal_size import *
-from modules.wifis import *
+from dep.read_readme import *
+from dep.terminal_size import *
+from dep.wifis import *
 
 
 con = Console()
@@ -65,8 +65,7 @@ def halfMatrix():
 
 if read_readmeMD:
     mainMenu()
-    for line in halfMatrix():
-        print(line)
+    matrix_p = halfMatrix() # list
 else:
     print("\nPlease read README.md\n")
     exit()
